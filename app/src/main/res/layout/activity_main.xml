@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_marginTop="50dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_alarm"
+        android:id="@+id/myImage"
+        android:layout_centerHorizontal="true"
+        />
+    <!--        android:layout_centerInParent="true"-->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/cyberzek"
+        android:id="@+id/cyberZek"
+        android:layout_below="@+id/myImage"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/medicode"
+        android:id="@+id/medicode"
+        android:layout_below="@+id/cyberZek"
+        android:layout_centerInParent="true"/>
+
+        <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/medicode"
+        android:id="@+id/medicode"
+        android:layout_below="@+id/cyberZek"
+        android:layout_centerInParent="true"/>
+        
+</RelativeLayout>
