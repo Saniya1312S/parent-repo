@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  android-builder:
+    build: .
+    container_name: android_build_container
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["./gradlew", "assembleDebug"]
