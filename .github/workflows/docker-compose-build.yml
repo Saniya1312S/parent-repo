@@ -19,14 +19,15 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build with Docker Compose
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          docker compose -f docker-compose.yml up --build
+          docker compose -f docker-compose.yml up --build -d
 
+      # ✅ Final Step: Tag and Push Image to Docker Hub
       - name: Tag and Push Image to Docker Hub
         run: |
-          IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/android-builder:latest
-          docker tag android_build_container $IMAGE_NAME
+          IMAGE_NAME=saniya1312/parent-repo:latest
+          
+          # Use the name of your built image or container here
+          docker commit android_build_container $IMAGE_NAME
+          
           docker push $IMAGE_NAME
