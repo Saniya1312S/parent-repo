@@ -11,5 +11,6 @@ services:
     working_dir: /app
     command: ["./gradlew", "assembleDebug"]
     environment:
-      - DOCKER_USERNAME=${DOCKER_USERNAME}
-      - DOCKER_PASSWORD=${DOCKER_PASSWORD}
+      ANDROID_SDK_ROOT: /opt/android-sdk
+      GRADLE_USER_HOME: /app/.gradle
+    tty: true
