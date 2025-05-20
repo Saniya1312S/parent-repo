@@ -18,16 +18,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build with Docker Compose
+      - name: Build Docker Image
         run: |
-          docker compose -f docker-compose.yml up --build -d
+          docker build -t saniya1312/parent-repo:latest .
 
-      # ✅ Final Step: Tag and Push Image to Docker Hub
-      - name: Tag and Push Image to Docker Hub
+      - name: Push Docker Image to Docker Hub
         run: |
-          IMAGE_NAME=saniya1312/parent-repo:latest
-          
-          # Use the name of your built image or container here
-          docker commit android_build_container $IMAGE_NAME
-          
-          docker push $IMAGE_NAME
+          docker push saniya1312/parent-repo:latest
