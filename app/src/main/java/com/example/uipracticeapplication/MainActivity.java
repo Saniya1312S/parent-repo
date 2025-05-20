@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             Log.d("MainActivity", "Main Activity is launched");
+            Log.d("MainActivity", "Main Activity is launch time: " + System.currentTimeMillis());
             return insets;
         });
     }
