@@ -1,30 +1,34 @@
-FROM openjdk:11-jdk
+# Use OpenJDK 17 with Debian base image
+FROM openjdk:17-slim
 
-# Set environment variables
-ENV ANDROID_HOME /opt/android-sdk
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+# Install required tools
+RUN apt-get update && \
+    apt-get install -y wget unzip git curl lib32stdc++6 lib32z1 && \
+    rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
-RUN apt-get update && apt-get install -y wget unzip git
+# Set environment variables for Android SDK
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
 
-# Install Android SDK
-RUN mkdir -p ${ANDROID_HOME} && \
-    wget -q https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip && \
-    unzip cmdline-tools.zip -d ${ANDROID_HOME}/cmdline-tools && \
-    mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest && \
-    rm cmdline-tools.zip
+# Create Android SDK directory and download command line tools
+RUN mkdir -p $ANDROID_SDK_ROOT/cmdline-tools && \
+    cd $ANDROID_SDK_ROOT/cmdline-tools && \
+    wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O tools.zip && \
+    unzip tools.zip && rm tools.zip && \
+    mv cmdline-tools latest
 
-# Accept licenses and install SDK components
-RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses && \
-    ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --sdk_root=${ANDROID_HOME} \
-        "platform-tools" "platforms;android-31" "build-tools;31.0.0"
+# Accept licenses and install essential packages
+RUN yes | sdkmanager --licenses && \
+    sdkmanager "platform-tools" "build-tools;34.0.0" "platforms;android-34"
 
-# Copy your Android project
+# Set working directory
 WORKDIR /app
+
+# Copy all project files into container
 COPY . .
 
-# Build your Android project using Gradle
-RUN ./gradlew build
+# Make Gradle wrapper executable
+RUN chmod +x ./gradlew
 
-# Default command (optional)
-CMD ["./gradlew", "assembleDebug"]
+# Build the project with full warnings and debug output
+RUN ./gradlew build --warning-mode all --stacktrace
