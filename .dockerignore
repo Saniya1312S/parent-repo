@@ -1,5 +1,8 @@
-.gradle/
-build/
+.git
+.idea
 *.iml
-.idea/
 *.apk
+*.keystore
+.gradle
+build/
+local.properties
