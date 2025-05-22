@@ -1,34 +1,31 @@
-# Use OpenJDK 17 with Debian base image
-FROM openjdk:17-slim
+# Use an official JDK with Android SDK
+FROM openjdk:11-slim
 
-# Install required tools
-RUN apt-get update && \
-    apt-get install -y wget unzip git curl lib32stdc++6 lib32z1 && \
-    rm -rf /var/lib/apt/lists/*
+# Set environment variables
+ENV ANDROID_SDK_ROOT /opt/android-sdk
+ENV PATH ${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin:${ANDROID_SDK_ROOT}/platform-tools
 
-# Set environment variables for Android SDK
-ENV ANDROID_SDK_ROOT=/opt/android-sdk
-ENV PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
+# Install required dependencies
+RUN apt-get update && apt-get install -y wget unzip git curl lib32stdc++6 lib32z1
 
-# Create Android SDK directory and download command line tools
-RUN mkdir -p $ANDROID_SDK_ROOT/cmdline-tools && \
-    cd $ANDROID_SDK_ROOT/cmdline-tools && \
+# Download Android SDK command line tools
+RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
+    cd ${ANDROID_SDK_ROOT}/cmdline-tools && \
     wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O tools.zip && \
-    unzip tools.zip && rm tools.zip && \
-    mv cmdline-tools latest
+    unzip tools.zip && rm tools.zip
 
-# Accept licenses and install essential packages
+# Accept licenses and install platforms
 RUN yes | sdkmanager --licenses && \
-    sdkmanager "platform-tools" "build-tools;34.0.0" "platforms;android-34"
+    sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
-# Set working directory
+# Copy project files
 WORKDIR /app
-
-# Copy all project files into container
 COPY . .
 
-# Make Gradle wrapper executable
+# Make gradlew executable
 RUN chmod +x ./gradlew
 
-# Build the project with full warnings and debug output
-RUN ./gradlew build --warning-mode all --stacktrace
+# Build the Android project
+RUN ./gradlew build --warning-mode all
+
+CMD ["./gradlew", "build"]
