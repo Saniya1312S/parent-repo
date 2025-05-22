@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- Username and Full Name Section -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Profile Picture"
+            android:src="@drawable/ic_placeholder"
+            app:shapeAppearanceOverlay="@style/CircularImageView" />
+
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1">
+        <!-- Username -->
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"
+            android:gravity="start"
+            android:textStyle="bold"/>
+
+        <!-- Full Name below Username -->
+        <TextView
+            android:id="@+id/fullnameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="Full Name"
+            android:textSize="14sp" />
+    </LinearLayout>
+    </LinearLayout>
+    <!-- Follower Status -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end">
+
+        <ImageView
+            android:id="@+id/followerTickImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cross"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <!-- Following Status -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:layout_marginEnd="32sp">
+
+        <ImageView
+            android:id="@+id/followingTickImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cross"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        &lt;!&ndash; Username and Full Name Section &ndash;&gt;
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1">
+
+            &lt;!&ndash; Username &ndash;&gt;
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                android:gravity="start" />
+
+            &lt;!&ndash; Full Name below Username &ndash;&gt;
+            <TextView
+                android:id="@+id/fullnameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Full Name"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        &lt;!&ndash; Follower Status &ndash;&gt;
+        <ImageView
+            android:id="@+id/followerTickImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cross"
+            android:visibility="gone"
+            android:layout_marginEnd="94dp"/>
+
+        &lt;!&ndash; Following Status, aligned to the right &ndash;&gt;
+        <ImageView
+            android:id="@+id/followingTickImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cross"
+            android:visibility="gone"
+            android:layout_marginEnd="24dp"/>
+    </LinearLayout>
+    -->

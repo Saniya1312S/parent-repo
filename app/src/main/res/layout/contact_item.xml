@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:padding="6dp"
+        android:layout_marginStart="58sp"
+    android:fitsSystemWindows="true">
+
+        <!-- Profile Picture -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Profile Picture"
+            android:src="@drawable/ic_placeholder"
+            app:shapeAppearanceOverlay="@style/CircularImageView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!-- Contact Name -->
+        <TextView
+            android:id="@+id/contactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <!-- Contact Phone Number -->
+        <TextView
+            android:id="@+id/contactPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9876543219"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    </LinearLayout>

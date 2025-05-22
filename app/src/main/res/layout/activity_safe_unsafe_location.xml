@@ -1,0 +1,146 @@
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true">
+
+    <!-- Title/Text -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location History"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- RecyclerView for Location History -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/locationHistoryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        &lt;!&ndash; Header Section: Outside the Safe Zone and Add to Safe &ndash;&gt;
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            &lt;!&ndash; Left TextView: "Outside the Safe Zone" &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Outside the Safe Zone"
+                android:textColor="#E45A51"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            &lt;!&ndash; Right TextView: "Add to Safe" &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to Safe"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        &lt;!&ndash; Scrollable List for locations outside geofence &ndash;&gt;
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                &lt;!&ndash; RecyclerView for Locations outside Geofence &ndash;&gt;
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/unsafe_locations_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+
+        &lt;!&ndash; Divider &ndash;&gt;
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#898989"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+
+        &lt;!&ndash; Header Section: Inside the Safe Zone and Remove from Safe &ndash;&gt;
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical">
+
+            &lt;!&ndash; Left TextView: "Outside the Safe Zone" &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inside the Safe Zone"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            &lt;!&ndash; Right TextView: "Add to Safe" &ndash;&gt;
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove from Safe"
+                android:textColor="#E45A51"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        &lt;!&ndash; Scrollable List for locations outside geofence &ndash;&gt;
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                &lt;!&ndash; RecyclerView for Locations outside Geofence &ndash;&gt;
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/safe_locations_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    -->

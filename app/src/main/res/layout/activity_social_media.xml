@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Row 1 (Two cards in one row) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- WhatsApp Card -->
+        <LinearLayout
+            android:id="@+id/whatsapp_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Whats App Icon"
+                android:src="@drawable/whatsapp_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="WhatsApp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Chat and Media"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Instagram Card -->
+        <LinearLayout
+            android:id="@+id/instagram_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Instagram Icon"
+                android:src="@drawable/instagram_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Instagram"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Photos and Stories"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Row 2 (Two cards in the second row) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- Facebook Card -->
+        <LinearLayout
+            android:id="@+id/facebook_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Facebook Icon"
+                android:src="@drawable/facebook_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Facebook"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Social Networking"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Snapchat Card -->
+        <LinearLayout
+            android:id="@+id/snapchat_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Snapchat Icon"
+                android:src="@drawable/snapchat_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Snapchat"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Snaps and Stories"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Row 3 (Two cards in the third row) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- YouTube Card -->
+        <LinearLayout
+            android:id="@+id/twitter_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Twitter Icon"
+                android:src="@drawable/twitter_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Twitter"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Tweets and News"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Telegram Card -->
+        <LinearLayout
+            android:id="@+id/telegram_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Telegram Icon"
+                android:src="@drawable/telegram_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Telegram"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Messaging and Groups"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        &lt;!&ndash; RecyclerView to show recent notifications &ndash;&gt;
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/socialMediaRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    -->

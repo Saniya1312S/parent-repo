@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/social_media_card"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_columnWeight="1"
+    android:orientation="vertical"
+    android:background="@drawable/card_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="6dp"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="Social Media Icon"
+        android:src="@drawable/ic_social_media" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="Social Media"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</LinearLayout>

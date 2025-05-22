@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="32dp">
+
+        <TextView
+            android:text="Settings"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Change Password Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="@color/custom_blue"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icPassword"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_password"
+                    app:tint="@color/custom_blue" />
+
+                <TextView
+                    android:id="@+id/changePasswordText"
+                    android:text="Change Password"
+                    android:textSize="16sp"
+                    android:paddingStart="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Logout Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="@android:color/holo_red_dark"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icLogout"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_logout"
+                    app:tint="@android:color/holo_red_dark" />
+
+                <TextView
+                    android:id="@+id/logoutText"
+                    android:text="Logout"
+                    android:textSize="16sp"
+                    android:paddingStart="16dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:text="Settings Screen"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+    -->

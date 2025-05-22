@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".authentication.activity.GuestRegisterActivity">
+
+    <!-- Registration Container -->
+    <LinearLayout
+        android:id="@+id/registerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <!-- Back Button in Child Details Layout -->
+
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_logo" />
+
+
+        <!-- Username Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Password Field"
+                android:drawableEnd="@drawable/show_password"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingEnd="20dp"
+                android:textColorHint="#757575" />  <!-- Add a custom drawable to simulate 'Show' text -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reconfirmPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reconfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Password Field"
+                android:drawableEnd="@drawable/show_password"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:paddingEnd="20dp"
+                android:textColorHint="#757575" />  <!-- Add a custom drawable to simulate 'Show' text -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Country Spinner (Dropdown) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Label on the left -->
+            <TextView
+                android:id="@+id/countryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Country"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/countryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:hintEnabled="true">
+
+                <android.widget.Spinner
+                    android:id="@+id/countrySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/freeRegisterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/roboto"
+            android:text="Register as Guest"
+            android:textColor="#FFFFFF" />
+
+        <!-- Subscribe Button -->
+        <Button
+            android:id="@+id/subRegisterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/roboto"
+            android:text="Subscribe"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back Button"
+        android:src="@drawable/ic_back_button"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".authentication.activity.RegisterActivity">
+
+        &lt;!&ndash; Parent Details Layout &ndash;&gt;
+        <LinearLayout
+            android:id="@+id/parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp"
+            tools:ignore="MissingConstraints">
+
+            &lt;!&ndash; App Logo &ndash;&gt;
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_logo"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parentNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Parent Name"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parentPhoneLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parentPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Parent Phone Number"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parentAddressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parentAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Parent Address"
+                    android:inputType="textPostalAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/loginLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Have an account? Login"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Next"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        &lt;!&ndash; Child Details Layout &ndash;&gt;
+        <LinearLayout
+            android:id="@+id/childLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="32dp"
+            android:layout_marginTop="16dp"
+            tools:ignore="MissingConstraints">
+
+            &lt;!&ndash; Back Button in Child Details Layout &ndash;&gt;
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_button"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back Button" />
+
+            &lt;!&ndash; App Logo &ndash;&gt;
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_logo"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/childNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/childName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Child Name"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/childPhoneLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/childPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Child Phone Number"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/childAadharLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/childAadhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Child Aadhar Number"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/childDobLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/childDob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Child Date of Birth"
+                    android:focusable="false"
+                    android:clickable="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            &lt;!&ndash; Checkboxes for Permissions &ndash;&gt;
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/locationTracking"
+                android:text="Location Tracking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/callsPermission"
+                android:text="Calls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/smsPermission"
+                android:text="SMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/appUsagePermission"
+                android:text="App Usage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/socialMediaPermission"
+                android:text="Social Media"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            &lt;!&ndash; Social Media Options &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/socialMediaOptions"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/whatsapp"
+                    android:text="WhatsApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/facebook"
+                    android:text="Facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/instagram"
+                    android:text="Instagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/snapchat"
+                    android:text="Snapchat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/twitter"
+                    android:text="Twitter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/telegram"
+                    android:text="Telegram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/loginLink1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Have an account? Login"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/loginButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:layout_marginTop="20dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    -->

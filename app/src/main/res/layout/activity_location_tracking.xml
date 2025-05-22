@@ -1,0 +1,613 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:id="@+id/location_tracking_root"
+    tools:context=".features.locationtracking.fragment.LocationTrackingFragment">
+
+    <!-- Subscription Info -->
+    <LinearLayout
+        android:id="@+id/subscription_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@drawable/demo_experience_background"
+        android:elevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <TextView
+            android:id="@+id/plan_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="You're currently using the free trial, it ends on June 1, 2025."
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="16dp" />
+
+        <Button
+            android:id="@+id/subscribe_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- Map Fragment (50% of the screen height) -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8sp"
+        app:layout_constraintTop_toBottomOf="@id/subscription_info_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintDimensionRatio="H,13:10" />
+
+
+    <!-- Recent Location Text -->
+    <TextView
+        android:id="@+id/recent_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recent Location: "
+        android:textColor="#C3000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Most Time Spent Location Text -->
+    <TextView
+        android:id="@+id/location_time_spent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Most Time Spent Location: "
+        android:textColor="#E03F51B5"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/recent_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- GridLayout for Cards (taking up remaining 50% of the screen height) -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/card_grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:alignmentMode="alignMargins"
+        app:columnCount="1"
+        app:columnOrderPreserved="false"
+        app:layout_constraintTop_toBottomOf="@id/location_time_spent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rowCount="3">
+
+            <!-- Row 1 (Two cards in one row) -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- GPS location Card -->
+                <LinearLayout
+                    android:id="@+id/gps_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="GPS Icon"
+                        android:src="@drawable/ic_gps" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Location"
+                        android:textSize="16sp"
+                        android:textStyle="bold" /> <!-- Spacing between icon and text -->
+                </LinearLayout>
+
+                <!-- Social Media Card -->
+                <LinearLayout
+                    android:id="@+id/call_logs_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="Call Logs Icon"
+                        android:src="@drawable/ic_call" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Call Details"
+                        android:textSize="16sp"
+                        android:textStyle="bold" /> <!-- Spacing between icon and text -->
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 2 (Two cards in the second row) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Call Logs Card -->
+                <LinearLayout
+                    android:id="@+id/social_media_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="Social Media Icon"
+                        android:src="@drawable/ic_social_media" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Social Media"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <!-- Message Logs Card -->
+                <LinearLayout
+                    android:id="@+id/message_logs_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="Message Logs Icon"
+                        android:src="@drawable/ic_sms" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="SMS Details"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!--        Row 3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- App Usage Card -->
+                <LinearLayout
+                    android:id="@+id/app_usage_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="App Usage Icon"
+                        android:src="@drawable/ic_app_usage" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="App Usage"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Contacts Card -->
+                <LinearLayout
+                    android:id="@+id/contacts_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="Contacts Icon"
+                        android:src="@drawable/ic_contact" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Contacts"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+    <!--
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:padding="16dp"
+        android:id="@+id/location_container"
+        tools:context=".features.locationtracking.fragment.LocationTrackingFragment">
+
+            &lt;!&ndash; Map Fragment (50% of the screen) &ndash;&gt;
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            &lt;!&ndash; TextView for displaying recent location &ndash;&gt;
+            <TextView
+                android:id="@+id/recent_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Recent Location: "
+                android:textColor="#C3000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            &lt;!&ndash; TextView for displaying most-time-spent location &ndash;&gt;
+            <TextView
+                android:id="@+id/location_time_spent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Most Time Spent Location: "
+                android:textColor="#E03F51B5"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            &lt;!&ndash; Bottom Section (50% of the screen) &ndash;&gt;
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                &lt;!&ndash; Row 1 (Two cards in one row) &ndash;&gt;
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    &lt;!&ndash; GPS location Card &ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/gps_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_background"
+                        android:clickable="true"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="GPS Icon"
+                            android:src="@drawable/ic_gps" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:text="Location"
+                            android:textSize="16sp"
+                            android:textStyle="bold" /> &lt;!&ndash; Spacing between icon and text &ndash;&gt;
+                    </LinearLayout>
+
+                    &lt;!&ndash; Social Media Card &ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/call_logs_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_background"
+                        android:clickable="true"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="Call Logs Icon"
+                            android:src="@drawable/ic_call" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:text="Call Details"
+                            android:textSize="16sp"
+                            android:textStyle="bold" /> &lt;!&ndash; Spacing between icon and text &ndash;&gt;
+                    </LinearLayout>
+                </LinearLayout>
+
+                &lt;!&ndash; Row 2 (Two cards in the second row) &ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    &lt;!&ndash; Call Logs Card &ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/social_media_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_background"
+                        android:clickable="true"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="Social Media Icon"
+                            android:src="@drawable/ic_social_media" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:text="Social Media"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    &lt;!&ndash; Message Logs Card &ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/message_logs_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_background"
+                        android:clickable="true"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="Message Logs Icon"
+                            android:src="@drawable/ic_sms" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:text="SMS Details"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                &lt;!&ndash;        Row 3&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    &lt;!&ndash; App Usage Card &ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/app_usage_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_background"
+                        android:clickable="true"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="App Usage Icon"
+                            android:src="@drawable/ic_app_usage" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:text="App Usage"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    &lt;!&ndash; Contacts Card &ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/contacts_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_background"
+                        android:clickable="true"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:contentDescription="Contacts Icon"
+                            android:src="@drawable/ic_contact" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="8dp"
+                            android:text="Contacts"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    -->

@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_profile"
+        android:background="@drawable/circle_background" />
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginTop="16dp" />
+
+    <!-- Menu Options -->
+    <TextView
+        android:id="@+id/menu_profile"
+        android:text="Profile"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/menu_settings"
+        android:text="Settings"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/menu_logout"
+        android:text="Logout"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

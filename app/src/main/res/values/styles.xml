@@ -1,0 +1,43 @@
+<resources>
+    <style name="CircularImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- This makes it circular -->
+    </style>
+
+    <string-array name="country_array">
+        <item>Select Country</item>
+        <item>India (+91)</item>
+        <item>United States of America (+1)</item>
+    </string-array>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="TabButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">#FFFFFF</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="TabButtonStyle.Selected">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/colorSecondaryLight</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="FeatureText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+</resources>
+

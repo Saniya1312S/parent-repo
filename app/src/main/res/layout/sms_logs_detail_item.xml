@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_marginBottom="4dp"
+    android:id="@+id/message_container">
+
+    <!-- Message Content -->
+    <TextView
+        android:id="@+id/sms_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi, How are you?"
+        android:textSize="16sp"
+        android:maxWidth="300dp"/>
+
+    <!-- Timestamp at the bottom -->
+    <TextView
+        android:id="@+id/sms_date_time"
+        android:text="10:00 AM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#474747"
+        android:gravity="end"/>
+</LinearLayout>
+
+
+
+
+
+
+
+
+    <!--
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        &lt;!&ndash; Call Type Icon (left side) &ndash;&gt;
+        <ImageView
+            android:id="@+id/sms_type_icon"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:contentDescription="SMS Type Icon"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp" />
+
+        &lt;!&ndash; Vertical Layout for Duration and Call Type (below duration) &ndash;&gt;
+        <LinearLayout
+            android:id="@+id/sms_info_layout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/sms_type_icon"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            &lt;!&ndash; Call Duration &ndash;&gt;
+            <TextView
+                android:id="@+id/sms_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Hi, How are you?"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            &lt;!&ndash; Call Type (Incoming, Outgoing, Missed) &ndash;&gt;
+            <TextView
+                android:id="@+id/sms_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sent"
+                android:textColor="#DA424141"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        &lt;!&ndash; RelativeLayout to Align Date/Time at the Right &ndash;&gt;
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            &lt;!&ndash; Call Date/Time (right side) &ndash;&gt;
+            <TextView
+                android:id="@+id/sms_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="21dp"
+                android:text="Jan 1, 2025 10:00 AM" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    -->

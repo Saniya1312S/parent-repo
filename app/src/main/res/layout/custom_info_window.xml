@@ -1,0 +1,74 @@
+<!-- res/layout/info_window.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:background="@drawable/info_window_background"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/info_window_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="2dp"
+        android:text="Recent Location"/>
+
+    <TextView
+        android:id="@+id/info_window_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:text="Address will be here"/>
+
+    <TextView
+        android:id="@+id/info_window_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:text="Time will be here"/>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <!--
+    &lt;!&ndash; res/layout/custom_info_window.xml &ndash;&gt;
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="@drawable/info_window_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Location Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:textSize="14sp"
+            android:text="Location Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    -->

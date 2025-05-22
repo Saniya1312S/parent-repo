@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+    <color name="darker_gray">#555555</color>
+
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#1B7E6A</color> <!-- Deep Green -->
+    <color name="colorPrimaryLight">#4CAF50</color> <!-- Lighter Green -->
+    <color name="colorPrimaryDark">#006644</color> <!-- Darker Green -->
+
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#7E1B3A</color> <!-- Deep Red -->
+    <color name="colorSecondaryLight">#D16D7A</color> <!-- Lighter Red -->
+    <color name="colorSecondaryDark">#5C0A2A</color> <!-- Darker Red -->
+
+    <!-- Accent Colors -->
+    <color name="colorAccent">#FF9800</color> <!-- Orange Accent -->
+    <color name="colorAccentLight">#FFB74D</color> <!-- Light Orange Accent -->
+    <color name="colorAccentDark">#F57C00</color> <!-- Darker Orange Accent -->
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color> <!-- Dark Text for readability -->
+    <color name="colorTextSecondary">#757575</color> <!-- Secondary Text Color -->
+    <color name="colorHintText">#9E9E9E</color> <!-- Hint Text Color -->
+    <color name="colorTextOnPrimary">#FFFFFF</color> <!-- White Text on Primary Background -->
+    <color name="colorTextOnSecondary">#FFFFFF</color> <!-- White Text on Secondary Background -->
+
+    <!-- Background Colors -->
+    <color name="colorBackground">#FFFFFF</color> <!-- White Background -->
+    <color name="colorBackgroundDark">#F5F5F5</color> <!-- Light Grey Background -->
+    <color name="colorBackgroundPrimary">#E0F7FA</color> <!-- Light Teal Background for Primary -->
+    <color name="colorBackgroundSecondary">#FFEBEE</color> <!-- Light Red Background for Secondary -->
+
+    <!-- Border and Divider Colors -->
+    <color name="colorBorder">#BDBDBD</color> <!-- Light Grey Border -->
+    <color name="colorDivider">#E0E0E0</color> <!-- Divider Color -->
+
+    <!-- Status Bar and Navigation Bar Colors -->
+    <color name="colorStatusBar">#1B7E6A</color> <!-- Primary Color for Status Bar -->
+    <color name="colorNavBar">#000000</color> <!-- Black Navigation Bar -->
+
+    <color name="purple_500">#6200EE</color>
+    <color name="custom_blue">#2F43B6</color>
 </resources>
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="black">#FF000000</color>
+        <color name="white">#FFFFFFFF</color>
+        <color name="green">#4CAF50</color>
+        <color name="red">#F44336</color>
+        <color name="colorPrimary">#1B7E6A</color>
+        <color name="colorSecondary">#7E1B3A</color>
+    </resources>-->

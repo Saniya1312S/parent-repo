@@ -1,0 +1,26 @@
+<!-- whatsapp_message_detail_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_marginBottom="4dp"
+    android:id="@+id/whatsapp_message_container"> <!-- Ensure this ID is correct -->
+
+    <TextView
+        android:id="@+id/whatsapp_message_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message Content"
+        android:textSize="16sp"
+        android:maxWidth="300dp"/>
+
+    <TextView
+        android:id="@+id/whatsapp_message_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timestamp"
+        android:textSize="12sp"
+        android:textColor="#474747"
+        android:gravity="end"/>
+</LinearLayout>

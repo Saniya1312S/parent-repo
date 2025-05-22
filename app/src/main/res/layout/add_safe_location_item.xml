@@ -1,0 +1,154 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="?android:attr/selectableItemBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true">
+
+    <!-- Location Details -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp">
+        <TextView
+            android:id="@+id/locationAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location Address"
+            android:textSize="16sp"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:id="@+id/locationTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timestamp"
+            android:textSize="12sp"
+            android:textColor="#777777"/>
+    </LinearLayout>
+
+    <!-- Geofence Toggle -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:id="@+id/geofenceSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <!-- Geofence Status Text (Inside/Outside) -->
+<!--        <TextView
+            android:id="@+id/geofenceStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Safe"
+            android:textSize="14sp"
+            android:textColor="#4CAF50" /> &lt;!&ndash; Green color for "Inside" &ndash;&gt;-->
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/card_background"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+        &lt;!&ndash; Container for Address and Timestamp (Vertical layout) &ndash;&gt;
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            &lt;!&ndash; Address TextView (takes most space) &ndash;&gt;
+            <TextView
+                android:id="@+id/location_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            &lt;!&ndash; Timestamp TextView (below Address) &ndash;&gt;
+            <TextView
+                android:id="@+id/location_timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Timestamp"
+                android:textSize="12sp"
+                android:textColor="#808080" />
+        </LinearLayout>
+
+        &lt;!&ndash; "+" Button (fixed size) &ndash;&gt;
+        <ImageButton
+            android:id="@+id/add_location_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_add_to_geofence"
+            android:contentDescription="Add location"
+            android:background="@drawable/rounded_background"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+        &lt;!&ndash;
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/card_background">
+
+            <TextView
+                android:id="@+id/location_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/location_timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timestamp"
+                android:textSize="12sp"
+                android:textColor="#808080" />
+        </LinearLayout>
+        &ndash;&gt;
+    -->

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <!-- Sender Label and Time -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <!-- Sender Label -->
+        <TextView
+            android:id="@+id/user_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:paddingBottom="2dp"/>
+
+        <!-- Spacer to push time to the right -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- TextView for Time -->
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:34 PM"
+            android:textColor="#646464"
+            android:textSize="12sp"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
+
+    <!-- Chat Content -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <!-- Vertical Line for ME (Red) & AI (Blue) -->
+        <View
+            android:id="@+id/messageLine"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:background="#FF2A2A"
+            android:visibility="visible"/>
+
+        <!-- Chat Message -->
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+</LinearLayout>
+

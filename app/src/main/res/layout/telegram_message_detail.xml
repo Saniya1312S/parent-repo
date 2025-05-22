@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- LinearLayout for Profile Picture and Contact Info (Horizontal) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#D6185B7C"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Profile Picture (circle) -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="Profile Picture"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_placeholder"
+            app:shapeAppearanceOverlay="@style/CircularImageView" />
+
+        <!-- Contact Name and Phone Number -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact Name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contact_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Phone Number"
+                android:textSize="14sp"
+                android:textColor="#F4F3F3"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- RecyclerView for Messages -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/telegram_messages_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/telegram_background"/>
+
+</LinearLayout>

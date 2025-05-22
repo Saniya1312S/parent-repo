@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Contact Name and Phone Number -->
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/contact_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Scrollable container for the call logs -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/call_logs_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"/>
+    </ScrollView>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        &lt;!&ndash; LinearLayout wrapped inside ScrollView &ndash;&gt;
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            &lt;!&ndash; Contact Name with bold text and font size 18sp &ndash;&gt;
+            <TextView
+                android:id="@+id/contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact Name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            &lt;!&ndash; Phone Number with font size 14sp &ndash;&gt;
+            <TextView
+                android:id="@+id/contact_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            &lt;!&ndash; Add some space below the Total Duration TextView &ndash;&gt;
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            &lt;!&ndash; Call Logs section &ndash;&gt;
+            <TextView
+                android:id="@+id/call_logs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Logs"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+    -->

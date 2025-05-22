@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:elevation="4dp"
+    android:layout_margin="4dp"
+    android:clipToPadding="false">
+
+    <!-- Icon Section (Left side) -->
+    <FrameLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/circle_background"
+        android:layout_marginEnd="12dp"
+        android:elevation="4dp"> <!-- Add elevation for shadow effect -->
+
+<!--        &lt;!&ndash; Icon (Whatsapp Icon in this case) &ndash;&gt;
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/default_contact_icon"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>-->
+        <!-- Profile Picture (circle) -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_placeholder"
+            android:contentDescription="Profile Picture"
+            android:scaleType="centerCrop"
+            android:layout_alignParentLeft="true"
+            app:shapeAppearanceOverlay="@style/CircularImageView" />
+    </FrameLayout>
+
+    <!-- Text Section (Middle) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Name and Phone Number -->
+        <TextView
+            android:id="@+id/contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Doe (123-456-7890)"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <!-- Icon (Whatsapp Icon in this case) -->
+        <ImageView
+            android:id="@+id/whatsapp_call_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_whatsapp_incomingcall_icon"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/whatsapp_call_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17 Feb, 07:46"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Call/Video Icon Section (Right side) -->
+    <FrameLayout
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_vertical"
+        android:elevation="4dp">
+
+        <!-- Call or Video Icon -->
+        <ImageView
+            android:id="@+id/whatsapp_call_mode_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_whatsapp_call_icon"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"/>
+    </FrameLayout>
+
+</LinearLayout>

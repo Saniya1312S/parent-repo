@@ -1,0 +1,84 @@
+<!-- install_uninstall_app_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="8dp"
+    android:fitsSystemWindows="true">
+
+    <!-- App Icon -->
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- App Name -->
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App Name"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- App Time -->
+    <TextView
+        android:id="@+id/app_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:layout_marginTop="2dp" />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        &lt;!&ndash; App Icon &ndash;&gt;
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp" />
+
+        &lt;!&ndash; App Name and Time &ndash;&gt;
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="App Name" />
+
+            <TextView
+                android:id="@+id/app_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Time"
+                android:textColor="#888888" />
+        </LinearLayout>
+    </LinearLayout>
+    -->

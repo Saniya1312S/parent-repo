@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Search Bar -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:padding="5dp"
+        >
+
+        <!-- EditText with rounded corners -->
+<!--
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/clearButton"
+            android:hint="🔍 Find Friends"
+            android:paddingLeft="12dp"
+            android:textColor="@color/black"
+            android:background="@drawable/search_bar_background" /> &lt;!&ndash; Set custom background &ndash;&gt;
+-->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:hint="🔍 Find Friends"
+            android:paddingLeft="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#4B4B4B"
+            android:background="@drawable/search_bar_background"
+            android:imeOptions="actionSearch"
+            android:inputType="text" /> <!-- Make sure it's set to text -->
+
+        <!-- Clear Button -->
+        <ImageView
+            android:id="@+id/clearButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <!-- RecyclerView for Friends List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/snapchat_contacts_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="6dp" />
+</RelativeLayout>

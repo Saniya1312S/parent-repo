@@ -2,16 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <!-- Declaring required hardware feature (telephony) -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <!-- Permissions required by the app -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/cyberzek"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/cyberzek"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UIPracticeApplication"
-        tools:targetApi="31">
+        android:theme="@style/Theme.Parent"
+        tools:targetApi="31"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,6 +37,56 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".features.HomeActivity"/>
+
+        <!-- Authentication Activities -->
+        <activity android:name=".authentication.activity.RegisterActivity"/>
+        <activity android:name=".authentication.activity.GuestRegisterActivity"/>
+        <activity android:name=".authentication.activity.SubscribeActivity"/>
+        <activity android:name=".authentication.activity.AddChildActivity"/>
+        <activity android:name=".authentication.activity.AddGuardianActivity"/>
+        <activity android:name=".authentication.activity.ChooseGuardianOrChild"/>
+        <activity android:name=".authentication.activity.AddGuardianDetailsActivity"/>
+        <activity android:name=".authentication.activity.ChooseGuardianOrChildActivity"/>
+
+        <!-- Location Tracking Activities -->
+        <activity android:name=".features.locationtracking.activity.LocationTrackingActivity" />
+        <activity android:name=".features.locationtracking.activity.AddOrRemoveSafeLocationActivity" />
+
+        <!-- Call Logs Activities -->
+        <activity android:name=".features.calllogs.activity.CallLogsActivity" />
+        <activity android:name=".features.calllogs.activity.CallLogsDetailActivity" />
+
+        <!-- SMS Logs Activities -->
+        <activity android:name=".features.smslogs.activity.SMSLogsActivity" />
+        <activity android:name=".features.smslogs.activity.SMSLogsDetailActivity" />
+
+        <!-- App Usage Activities -->
+        <activity android:name=".features.appusage.activity.AppUsageActivity"/>
+
+        <!-- Social Media Activities -->
+        <activity android:name=".features.socialmedia.activity.SocialMediaActivity"/>
+        <activity android:name=".features.socialmedia.activity.whatsapp.WhatsAppMessageDetailsActivity"/>
+        <activity android:name=".features.socialmedia.activity.SocialMediaCommonActivity"/>
+        <activity android:name=".features.socialmedia.activity.instagram.InstagramMessageDetailsActivity"/>
+        <activity android:name=".features.socialmedia.activity.facebook.FacebookMessageDetailsActivity"/>
+        <activity android:name=".features.socialmedia.activity.snapchat.SnapChatMessageDetailsActivity"/>
+        <activity android:name=".features.socialmedia.activity.telegram.TelegramMessageDetailsActivity"/>
+        <activity android:name=".features.socialmedia.activity.twitter.TwitterMessageDetailsActivity"/>
+
+        <!-- Phone Contacts Activity -->
+        <activity android:name=".features.contacts.activity.PhoneContactsActivity"/>
+
+        <activity android:name=".authentication.activity.SubscriptionOptionsActivity"/>
+        <activity android:name=".authentication.activity.AddMasterDetailsActivity"/>
+        <activity android:name=".authentication.activity.KidsAndGuardianDetailsActivity"/>
+        <activity android:name=".authentication.activity.PaymentOptionsActivity"/>
+        <activity android:name=".authentication.activity.AddChildDetailsActivity"/>
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAHdpI_Mqaf20sJGY00caMZhycfSFzA6_k" />
     </application>
 
 </manifest>

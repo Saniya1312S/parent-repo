@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".authentication.activity.GuestRegisterActivity">
+
+    <!-- Registration Container -->
+    <LinearLayout
+        android:id="@+id/registerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Back Button in Child Details Layout -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_button"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back Button"
+            android:layout_gravity="start"/>
+
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_logo" />
+
+        <!-- Demo Experience Text -->
+        <TextView
+            android:id="@+id/demoExperienceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="Guest users can experience the demo for 2 weeks after registering."
+            android:textSize="18sp"
+            android:textColor="#2C2C2C"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/demo_experience_background"
+            android:elevation="4dp" />
+
+        <!-- Username Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColorHint="#757575"
+                android:contentDescription="Password Field"
+                android:paddingEnd="20dp"
+                android:drawableEnd="@drawable/show_password"
+                />  <!-- Add a custom drawable to simulate 'Show' text -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reconfirmPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reconfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColorHint="#757575"
+                android:contentDescription="Password Field"
+                android:paddingEnd="20dp"
+                android:drawableEnd="@drawable/show_password"/>  <!-- Add a custom drawable to simulate 'Show' text -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Country Spinner (Dropdown) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/countryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <android.widget.Spinner
+                android:id="@+id/countrySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Login Redirect Text - Align left -->
+        <TextView
+            android:id="@+id/subscribeRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe? Click here"
+            android:textColor="@color/colorSecondary"
+            android:layout_gravity="start"
+            android:fontFamily="@font/roboto"/>
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Register as Guest"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".authentication.GuestRegisterActivity">
+
+    &lt;!&ndash; Registration Container &ndash;&gt;
+    <LinearLayout
+        android:id="@+id/registerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints">
+
+        &lt;!&ndash; Back Button in Child Details Layout &ndash;&gt;
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_button"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back Button"
+            android:layout_gravity="start"/>
+
+        &lt;!&ndash; App Logo &ndash;&gt;
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_logo" />
+
+        &lt;!&ndash; Demo Experience Text &ndash;&gt;
+        <TextView
+            android:id="@+id/demoExperienceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="Guest users can experience the demo for 2 weeks after registering."
+            android:textSize="18sp"
+            android:textColor="#2C2C2C"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/demo_experience_background"
+            android:elevation="4dp" />
+
+        &lt;!&ndash; Username Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        &lt;!&ndash;        &lt;!&ndash; Password Input &ndash;&gt;
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeWidth="2dp"
+                    app:hintEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColor="#000000"
+                        android:textColorHint="#757575" />
+                </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColorHint="#757575"
+                android:contentDescription="Password Field"
+                android:paddingEnd="20dp"
+                android:drawableEnd="@drawable/show_password"
+                />  &lt;!&ndash; Add a custom drawable to simulate 'Show' text &ndash;&gt;
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        &lt;!&ndash; Confirm Password Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reconfirmPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reconfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColorHint="#757575"
+                android:contentDescription="Password Field"
+                android:paddingEnd="20dp"
+                android:drawableEnd="@drawable/show_password"/>  &lt;!&ndash; Add a custom drawable to simulate 'Show' text &ndash;&gt;
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        &lt;!&ndash; Phone Number Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+                &lt;!&ndash; Country Spinner (Dropdown) &ndash;&gt;
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/countryLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeWidth="2dp"
+                    app:hintEnabled="true">
+
+                    <android.widget.Spinner
+                        android:id="@+id/countrySpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+        &lt;!&ndash; Login Redirect Text - Align left &ndash;&gt;
+        <TextView
+            android:id="@+id/subscribeRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe? Click here"
+            android:textColor="@color/colorSecondary"
+            android:layout_gravity="start"/>
+
+        &lt;!&ndash; Register Button &ndash;&gt;
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Register as Guest"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".authentication.GuestRegisterActivity">
+
+    &lt;!&ndash; Registration Container &ndash;&gt;
+    <LinearLayout
+        android:id="@+id/registerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints">
+
+        &lt;!&ndash; Back Button in Child Details Layout &ndash;&gt;
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_button"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back Button"
+            android:layout_gravity="start"/>
+
+        &lt;!&ndash; App Logo &ndash;&gt;
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_logo" />
+
+        &lt;!&ndash; Demo Experience Text &ndash;&gt;
+        <TextView
+            android:id="@+id/demoExperienceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="Guest users can experience the demo for 2 weeks after registering."
+            android:textSize="18sp"
+            android:textColor="#2C2C2C"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/demo_experience_background"
+            android:elevation="4dp" />
+
+        &lt;!&ndash; Username Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+&lt;!&ndash;        &lt;!&ndash; Password Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColorHint="#757575"
+                android:contentDescription="Password Field"
+                android:paddingEnd="20dp"
+            android:drawableEnd="@drawable/show_password"
+                />  &lt;!&ndash; Add a custom drawable to simulate 'Show' text &ndash;&gt;
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        &lt;!&ndash; Confirm Password Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reconfirmPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reconfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColorHint="#757575"
+                android:contentDescription="Password Field"
+                android:paddingEnd="20dp"
+                android:drawableEnd="@drawable/show_password"/>  &lt;!&ndash; Add a custom drawable to simulate 'Show' text &ndash;&gt;
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        &lt;!&ndash; Phone Number Input &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:textColor="#000000"
+                android:textColorHint="#757575" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+&lt;!&ndash;        &lt;!&ndash; Country Spinner (Dropdown) &ndash;&gt;
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/countryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:background="@drawable/border">
+
+            <android.widget.Spinner
+                android:id="@+id/countrySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"/>
+        </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;
+        &lt;!&ndash; Error message outside the box &ndash;&gt;
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#BA2D2D"
+            android:textSize="13sp"
+            android:layout_marginStart="9sp"
+            android:visibility="gone" />  &lt;!&ndash; Initially hidden &ndash;&gt;
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/countryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxStrokeWidth="2dp"
+            app:hintEnabled="true"
+            android:background="@drawable/border">
+
+            <android.widget.Spinner
+                android:id="@+id/countrySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        &lt;!&ndash; Login Redirect Text - Align left &ndash;&gt;
+        <TextView
+            android:id="@+id/subscribeRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe? Click here"
+            android:textColor="@color/colorSecondary"
+            android:layout_gravity="start"/>
+
+        &lt;!&ndash; Register Button &ndash;&gt;
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Register as Guest"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".authentication.GuestRegisterActivity">
+
+
+        &lt;!&ndash; Registration Container &ndash;&gt;
+        <LinearLayout
+            android:id="@+id/registerContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_editor_absoluteY="-1dp"
+            tools:ignore="MissingConstraints">
+            &lt;!&ndash; Back Button in Child Details Layout &ndash;&gt;
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_button"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back Button"
+                android:layout_gravity="start"/>
+
+            &lt;!&ndash; App Logo &ndash;&gt;
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_logo" />
+
+            &lt;!&ndash; Demo Experience Text &ndash;&gt;
+            <TextView
+                android:id="@+id/demoExperienceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="16dp"
+                android:text="Guest users can experience the demo for 2 weeks after registering."
+                android:textSize="18sp"
+                android:textColor="#2C2C2C"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/demo_experience_background"
+                android:elevation="4dp" />
+
+            &lt;!&ndash; Username Input &ndash;&gt;
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeWidth="2dp"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textColorHint="#757575" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            &lt;!&ndash; Password Input &ndash;&gt;
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeWidth="2dp"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColor="#000000"
+                    android:textColorHint="#757575" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            &lt;!&ndash; Phone Number Input &ndash;&gt;
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeWidth="2dp"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:textColor="#000000"
+                    android:textColorHint="#757575" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            &lt;!&ndash; Login Redirect Text - Align left &ndash;&gt;
+            <TextView
+                android:id="@+id/subscribeRedirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subscribe? Click here"
+                android:textColor="@color/colorSecondary"
+                android:layout_gravity="start"/>
+
+            &lt;!&ndash; Register Button &ndash;&gt;
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Register as Guest"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->

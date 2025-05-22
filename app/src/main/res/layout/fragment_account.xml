@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Root Layout -->
+    <LinearLayout
+        android:id="@+id/fragment_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Account Info Layout (Visible for MASTER) -->
+        <LinearLayout
+            android:id="@+id/accountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Profile Box -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/box_background"
+                android:padding="16dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/default_contact_icon"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="John Doe"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/user_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="johndoe@example.com"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Guardians -->
+            <TextView
+                android:id="@+id/guardians_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardians"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/guardian_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- Children -->
+            <TextView
+                android:id="@+id/kids_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Children"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/kid_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <!-- Subscription Info -->
+        <LinearLayout
+            android:id="@+id/subscription_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:padding="8dp"
+            android:background="@drawable/demo_experience_background"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/plan_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="You're currently using the free trial, it ends on June 1, 2025."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp" />
+
+            <Button
+                android:id="@+id/subscribe_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subscribe"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- GUEST Layout (Visible for guests only) -->
+        <LinearLayout
+            android:id="@+id/guest_message_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="32dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You're currently using the app as a guest. Subscribe to create a family profile."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/subscribe_guest_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subscribe"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            &lt;!&ndash; Account Layout &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/accountLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                &lt;!&ndash; Profile Box &ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/box_background"
+                    android:padding="16dp"
+                    android:elevation="4dp"
+                    android:layout_marginBottom="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/default_contact_icon"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="John Doe"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/user_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="johndoe@example.com"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/darker_gray" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                &lt;!&ndash; Guardians &ndash;&gt;
+                <TextView
+                    android:id="@+id/guardians_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guardians"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/guardian_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                &lt;!&ndash; Kids &ndash;&gt;
+                <TextView
+                    android:id="@+id/kids_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Children"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/kid_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            &lt;!&ndash; Subscription Info &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/subscription_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp"
+                android:padding="8dp"
+                android:background="@drawable/demo_experience_background"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/plan_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="You're currently using the free trial, it ends on June 1, 2025."
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/subscribe_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subscribe"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            &lt;!&ndash; Optional hidden include &ndash;&gt;
+            <include
+                android:id="@+id/chooseGuardianChildLayout"
+                layout="@layout/activity_choose_child_or_guardian"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+    -->
+
+
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            &lt;!&ndash; Account Layout (initial UI) &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/accountLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                &lt;!&ndash; Profile Box &ndash;&gt;
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/box_background"
+                    android:padding="16dp"
+                    android:elevation="4dp"
+                    android:layout_marginBottom="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/default_contact_icon"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="John Doe"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/user_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="johndoe@example.com"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/darker_gray" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            &lt;!&ndash; Subscription Information &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/subscription_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:id="@+id/plan_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You're currently using the free trial, it ends on June 1, 2025."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/subscribe_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subscribe Now"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="24dp"
+                    android:layout_gravity="end"/>
+            </LinearLayout>
+
+            &lt;!&ndash; Choose Guardian/Child Layout (secondary UI) &ndash;&gt;
+            <include
+                android:id="@+id/chooseGuardianChildLayout"
+                layout="@layout/activity_choose_child_or_guardian"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>-->

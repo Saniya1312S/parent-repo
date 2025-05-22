@@ -1,0 +1,133 @@
+<!-- whatsapp_message_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Profile Picture (circle) -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_placeholder"
+        android:contentDescription="Profile Picture"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        app:shapeAppearanceOverlay="@style/CircularImageView" />
+
+
+    <!-- Message Details (Name, Message, Time) -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <!-- Contact Name & Last Message -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Contact Name -->
+            <TextView
+                android:id="@+id/contact_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="John Doe"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_marginEnd="5dp"/>
+
+            <!-- Last Message Time -->
+            <TextView
+                android:id="@+id/message_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:05 AM"
+                android:textColor="#626161"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Last Message -->
+        <TextView
+            android:id="@+id/last_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hey, did you get my message?"
+            android:textColor="#494949"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+    <!--
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:elevation="4dp"
+        android:layout_margin="4dp"
+        android:clipToPadding="false">
+
+
+        <FrameLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:elevation="4dp"> &lt;!&ndash; Add elevation for shadow effect &ndash;&gt;
+
+            &lt;!&ndash; Icon Section &ndash;&gt;
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/whatsapp_icon"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"/>
+        </FrameLayout>
+
+
+
+        &lt;!&ndash; Text Section &ndash;&gt;
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            &lt;!&ndash; Name and Count &ndash;&gt;
+            <TextView
+                android:id="@+id/contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe (5)"
+                android:textSize="16dp"
+                android:textColor="@color/black" />
+
+
+            &lt;!&ndash; Phone Number &ndash;&gt;
+            <TextView
+                android:id="@+id/contact_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123-456-7890"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+    </LinearLayout>-->

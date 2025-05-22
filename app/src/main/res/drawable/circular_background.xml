@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFB300"/> <!-- Yellow color, change as needed -->
+    <corners android:radius="40dp"/> <!-- Makes the shape circular -->
+</shape>

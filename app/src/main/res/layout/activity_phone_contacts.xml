@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Search Bar -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:padding="5dp"
+        >
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:hint="Search contact"
+            android:paddingLeft="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#4B4B4B"
+            android:background="@drawable/search_bar_background"
+            android:imeOptions="actionSearch"
+            android:inputType="text" /> <!-- Make sure it's set to text -->
+
+    </RelativeLayout>
+
+
+    <!-- RecyclerView for Phone Contacts -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

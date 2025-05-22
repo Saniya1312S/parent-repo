@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <!-- LocationTrackingFragment container -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/location_tracking_fragment_container"
+        android:name="com.example.parentwithsubscription.features.locationtracking.fragment.LocationTrackingFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/homeLayout"
+            layout="@layout/activity_location_tracking"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/locationHistoryLayout"
+            layout="@layout/activity_safe_unsafe_location"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/callDetailsLayout"
+            layout="@layout/activity_call_logs"
+            android:visibility="gone"/>
+        <include
+            android:id="@+id/socialMediaLayout"
+            layout="@layout/activity_social_media"
+            android:visibility="gone"/>
+        <include
+            android:id="@+id/smsDetailsLayout"
+            layout="@layout/activity_sms_logs"
+            android:visibility="gone"/>
+        <include
+            android:id="@+id/appUsageLayout"
+            layout="@layout/activity_app_usage"
+            android:visibility="gone"/>
+        <include
+            android:id="@+id/contactsLayout"
+            layout="@layout/activity_phone_contacts"
+            android:visibility="gone"/>
+    </FrameLayout>
+    -->

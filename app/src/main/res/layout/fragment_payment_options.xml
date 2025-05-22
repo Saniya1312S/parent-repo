@@ -1,0 +1,265 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <!-- ✅ SINGLE DIRECT CHILD of ScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title Text -->
+            <TextView
+                android:id="@+id/childcare_payment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Payment Method"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Payment Method Radio Group -->
+            <RadioGroup
+                android:id="@+id/payment_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credit / Debit Card" />
+
+                <!-- Card Details -->
+                <LinearLayout
+                    android:id="@+id/layout_card_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="16dp">
+
+                    <EditText
+                        android:id="@+id/card_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Full Name"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/card_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Billing Address"
+                        android:inputType="textPostalAddress" />
+
+                    <EditText
+                        android:id="@+id/card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Card Number"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/card_expiry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Expiry Date (MM/YY)"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/card_cvv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="CVV"
+                        android:inputType="numberPassword" />
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/radio_upi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UPI (GPay/PhonePe/Paytm)" />
+
+                <!-- UPI Options -->
+                <RadioGroup
+                    android:id="@+id/layout_upi_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginStart="32dp">
+
+                    <RadioButton
+                        android:id="@+id/upi_googlepay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Google Pay" />
+
+                    <RadioButton
+                        android:id="@+id/upi_phonepe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PhonePe" />
+
+                    <RadioButton
+                        android:id="@+id/upi_paytm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paytm" />
+                </RadioGroup>
+
+                <RadioButton
+                    android:id="@+id/radio_paypal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PayPal" />
+
+                <!-- PayPal Details -->
+                <LinearLayout
+                    android:id="@+id/layout_paypal_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="16dp">
+
+                    <EditText
+                        android:id="@+id/paypal_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="PayPal Email"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+                <!-- Coupon Code Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/edit_coupon_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Enter Discount Coupon"
+                        android:inputType="text" />
+
+                    <Button
+                        android:id="@+id/btn_apply_coupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apply"
+                        android:layout_marginStart="12dp"
+                        android:minWidth="80dp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
+
+                <!-- Auto-Renewal Option -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkbox_autorenewal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enable Auto-Renewal" />
+                </LinearLayout>
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Bottom Pay Button -->
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_margin="16dp" />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@color/colorBackground">
+
+        <TextView
+            android:id="@+id/childcare_payment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Payment Method"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <RadioGroup
+            android:id="@+id/payment_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credit / Debit Card" />
+
+            <RadioButton
+                android:id="@+id/radio_upi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPI" />
+
+            <RadioButton
+                android:id="@+id/radio_paypal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PayPal" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+    -->
